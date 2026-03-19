@@ -3,54 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Academic Assistant</title>
+    <title>AI Academic Assistant Pro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="light-mode">
+    <div class="app-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
     <div class="app-container">
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar glass-panel">
             <div class="sidebar-header">
-                <h2>Docs</h2>
+                <div class="brand">
+                    <i class="fa-solid fa-graduation-cap brand-icon"></i>
+                    <h2>Knowledge Base</h2>
+                </div>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
             </div>
+            
             <div class="file-upload-section">
-                <input type="file" id="file-upload" accept=".pdf" hidden>
+                <input type="file" id="file-upload" accept=".pdf,.doc,.docx,.txt" multiple hidden>
                 <label for="file-upload" class="upload-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                    Upload PDF
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload Documents</span>
                 </label>
+                <p class="upload-help">Supports PDF, DOCX, TXT</p>
             </div>
-            <ul class="file-list" id="file-list">
-                <!-- File items will be added here dynamically -->
-                <li class="file-item placeholder">No files uploaded</li>
-            </ul>
+            
+            <div class="files-container">
+                <div class="list-header">
+                    <h3>Uploaded Files</h3>
+                    <span id="file-count" class="badge">0</span>
+                </div>
+                <ul class="file-list" id="file-list">
+                    <li class="file-item placeholder">
+                        <i class="fa-regular fa-folder-open"></i>
+                        <p>No documents uploaded yet</p>
+                    </li>
+                </ul>
+            </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content glass-panel">
             <header class="chat-header">
-                <h1>AI Academic Assistant <span class="badge">LLM + RAG</span></h1>
+                <div>
+                    <h1>AI Academic Assistant <span class="premium-badge">Pro</span></h1>
+                    <p class="subtitle">Powered by LLM + RAG Architecture</p>
+                </div>
+                <button id="clear-chat-btn" class="icon-btn danger-hover" title="Clear Chat History">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
             </header>
-            
+
             <div class="chat-area" id="chat-area">
                 <div class="message ai-message">
-                    <div class="avatar">AI</div>
+                    <div class="avatar ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
                     <div class="message-content">
-                        Hello! Upload a course syllabus or notes, and ask me anything about them.
+                        Hello! I am your AI Academic Assistant. Upload your course syllabi, research papers, or notes, and ask me to summarize them, explain complex topics, or quiz you!
                     </div>
                 </div>
-                <!-- Messages will be added here dynamically -->
             </div>
 
             <div class="input-area">
                 <div class="input-container">
-                    <input type="text" id="user-input" placeholder="Ask a question about your documents..." autocomplete="off">
-                    <button id="send-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    <button class="attachment-btn" title="Attach Document" onclick="document.getElementById('file-upload').click()">
+                        <i class="fa-solid fa-paperclip"></i>
                     </button>
+                    <textarea id="user-input" placeholder="Ask a question about your documents..." rows="1"></textarea>
+                    <button id="send-btn" class="send-btn" title="Send Message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="footer-text">
+                    AI can make mistakes. Consider verifying important information.
                 </div>
             </div>
         </main>
