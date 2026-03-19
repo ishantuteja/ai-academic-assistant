@@ -1,0 +1,21 @@
+# Environment variables (SECURITY RISK if pushed)
+.env
+
+# Uploads and User Data
+uploads/
+*.pdf
+*.txt
+*.doc
+*.docx
+
+# Python virtual environment and cache files
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
