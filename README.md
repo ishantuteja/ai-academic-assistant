@@ -1,22 +1,22 @@
-# 🎓 AI Academic Assistant
+# AI Academic Assistant
 
 > Upload your PDFs and ask questions — powered by Google Gemini and a RAG pipeline.
 
-A full-stack web application that lets you **upload academic documents (PDFs)** and **chat with them intelligently** using a Retrieval-Augmented Generation (RAG) pipeline. Built with Flask on the backend and a clean, responsive UI on the frontend.
+A full-stack web application that lets you upload academic documents (PDFs) and chat with them using a Retrieval-Augmented Generation (RAG) pipeline. Built with Flask on the backend and a clean, responsive UI on the frontend.
 
 ---
 
-## ✨ Features
+## Features
 
-- 📄 **PDF Ingestion** — Upload one or multiple PDF files at once
-- 🔍 **Semantic Search** — Documents are chunked, embedded, and indexed into a FAISS vector store
-- 🤖 **AI-Powered Q&A** — Ask any question and get context-aware answers from your documents using Google Gemini
-- 💬 **Conversational UI** — Clean chat interface with Markdown-rendered responses
-- 🔒 **Secure by default** — API keys stay in `.env`, uploads handled safely
+- **PDF Ingestion** — Upload one or multiple PDF files at once
+- **Semantic Search** — Documents are chunked, embedded, and indexed into a FAISS vector store
+- **AI-Powered Q&A** — Ask any question and get context-aware answers from your documents using Google Gemini
+- **Conversational UI** — Clean chat interface with Markdown-rendered responses
+- **Secure by default** — API keys stay in `.env`, uploads handled safely
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -30,7 +30,7 @@ A full-stack web application that lets you **upload academic documents (PDFs)** 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ Create a `.env` file in the root directory:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-> ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
+> Never commit your `.env` file. It is already listed in `.gitignore`.
 
 ### 5. Run the app
 
@@ -78,7 +78,7 @@ Open your browser and go to **http://127.0.0.1:5000**
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ai-academic-assistant/
@@ -94,7 +94,7 @@ ai-academic-assistant/
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 ```
 User uploads PDF
@@ -118,7 +118,7 @@ Response displayed in chat UI
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ```
 flask
@@ -139,7 +139,7 @@ pip install -r requirements.txt
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - The vector store is **in-memory only** — it resets when the server restarts
 - Only **PDF** files are currently supported
@@ -147,13 +147,13 @@ pip install -r requirements.txt
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🙋 Author
+## Author
 
 **Ishan Tuteja**  
-Built as an AI-powered document assistant project using LangChain and Google Gemini.
+Built as a document assistant project using LangChain and Google Gemini.
