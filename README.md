@@ -4,6 +4,9 @@
 
 A full-stack web application that lets you upload academic documents (PDFs) and chat with them using a Retrieval-Augmented Generation (RAG) pipeline. Built with Flask on the backend and a clean, responsive UI on the frontend.
 
+The backend is deployed on [Render](https://render.com) and accessible at:
+**https://ai-academic-assistant-slfb.onrender.com**
+
 ---
 
 ## Features
@@ -20,17 +23,33 @@ A full-stack web application that lets you upload academic documents (PDFs) and 
 
 | Layer | Technology |
 |---|---|
-| **Backend** | Python, Flask, Flask-CORS |
+| **Backend** | Python, Flask, Flask-CORS, Gunicorn |
 | **AI / LLM** | Google Gemini 2.5 Flash (`gemini-2.5-flash`) |
 | **Embeddings** | Google Generative AI Embeddings (`gemini-embedding-001`) |
 | **Vector Store** | FAISS (in-memory) |
 | **RAG Framework** | LangChain (`langchain`, `langchain-community`, `langchain-google-genai`) |
 | **PDF Parsing** | PyPDF via LangChain |
 | **Frontend** | HTML, CSS, Vanilla JavaScript |
+| **Deployment** | Render (backend) |
 
 ---
 
-## Getting Started
+## Deployment
+
+The Flask backend is deployed on Render using Gunicorn as the production WSGI server.
+
+**Live backend URL:** `https://ai-academic-assistant-slfb.onrender.com`
+
+To deploy your own instance on Render:
+
+1. Connect your GitHub repository to Render
+2. Set the **Start Command** to: `gunicorn app:app`
+3. Add `GEMINI_API_KEY` as an environment variable in the Render dashboard
+4. Render will install dependencies from `requirements.txt` automatically
+
+---
+
+## Getting Started (Local Development)
 
 ### Prerequisites
 
@@ -40,7 +59,7 @@ A full-stack web application that lets you upload academic documents (PDFs) and 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-academic-assistant.git
+git clone https://github.com/ishantuteja/ai-academic-assistant.git
 cd ai-academic-assistant
 ```
 
@@ -85,7 +104,7 @@ ai-academic-assistant/
 ├── app.py              # Flask backend — API routes & RAG pipeline
 ├── index.html          # Frontend UI
 ├── style.css           # Styling
-├── script.js           # Frontend logic
+├── script.js           # Frontend logic & API calls
 ├── requirements.txt    # Python dependencies
 ├── .env                # API keys (not committed)
 ├── .gitignore
@@ -123,6 +142,7 @@ Response displayed in chat UI
 ```
 flask
 flask-cors
+gunicorn
 langchain
 langchain-community
 langchain-google-genai
