@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const clearChatBtn = document.getElementById('clear-chat-btn');
 
-    // API URL
-    const API_BASE_URL = 'http://127.0.0.1:5000/api';
+    // API URL - Production backend deployed on Render
+    const API_BASE_URL = 'https://ai-academic-assistant-slfb.onrender.com/api';
 
     // State
     let files = [];
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         renderFileList();
                     }
                 } catch (error) {
-                    addMessage("❌ Connection error: Could not reach the backend API. Is app.py running?", 'sys');
+                    addMessage("❌ Connection error: Could not reach the backend server. Please try again shortly.", 'sys');
                     newFiles.forEach(nf => {
                         files = files.filter(f => f.name !== nf.name);
                     });
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             hideTypingIndicator();
-            addMessage("❌ Connection error: Could not reach the backend API. Make sure app.py is running.", 'sys');
+            addMessage("❌ Connection error: Could not reach the backend server. Please try again shortly.", 'sys');
         }
 
         isWaitingForResponse = false;
