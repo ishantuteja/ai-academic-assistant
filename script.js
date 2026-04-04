@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const clearChatBtn = document.getElementById('clear-chat-btn');
 
-    // API URL - Production backend deployed on Render
-    const API_BASE_URL = 'https://ai-academic-assistant-slfb.onrender.com/api';
+    // API URL - Uses relative path so it works both locally and in production
+    const API_BASE_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1') 
+        ? 'http://127.0.0.1:5000/api' 
+        : '/api';
 
     // State
     let files = [];

@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 
 # Load secret environment variables (like API keys) from a .env file
 load_dotenv()
+if os.environ.get("GEMINI_API_KEY"):
+    os.environ["GOOGLE_API_KEY"] = os.environ.get("GEMINI_API_KEY")
 
 # Serve static files from the current directory
 app = Flask(__name__, static_folder='.', static_url_path='')
