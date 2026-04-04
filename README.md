@@ -5,7 +5,7 @@
 A full-stack web application that lets you upload academic documents (PDFs) and chat with them using a Retrieval-Augmented Generation (RAG) pipeline. Built with Flask on the backend and a clean, responsive UI on the frontend.
 
 The backend is deployed on [Render](https://render.com) and accessible at:
-**https://ai-academic-assistant-slfb.onrender.com**
+**https://ai-academic-assistant-s1fb.onrender.com**
 
 ---
 
@@ -38,7 +38,7 @@ The backend is deployed on [Render](https://render.com) and accessible at:
 
 The Flask backend is deployed on Render using Gunicorn as the production WSGI server.
 
-**Live backend URL:** `https://ai-academic-assistant-slfb.onrender.com`
+**Live backend URL:** `https://ai-academic-assistant-s1fb.onrender.com`
 
 To deploy your own instance on Render:
 
