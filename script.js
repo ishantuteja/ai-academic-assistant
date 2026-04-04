@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const clearChatBtn = document.getElementById('clear-chat-btn');
 
-    // API URL - Uses relative path so it works both locally and in production
-    const API_BASE_URL = window.location.origin.includes('localhost') || window.location.origin.includes('127.0.0.1') 
-        ? 'http://127.0.0.1:5000/api' 
+    // API URL - Simple relative path works across all environments (local & production)
+    const API_BASE_URL = window.location.origin.includes('5000') || window.location.origin.includes('localhost')
+        ? `${window.location.origin}/api` 
         : '/api';
 
     // State
